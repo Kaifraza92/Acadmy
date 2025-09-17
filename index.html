@@ -225,17 +225,16 @@
 </div>
 
 <script>
-  // Hide preloader after 1s with 0.5s fade
+  // Hide preloader after 1s (entire animation finishes)
   window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    preloader.style.transition = 'opacity 0.2s ease'; // quick fade
     setTimeout(() => {
-      const preloader = document.getElementById('preloader');
-      preloader.style.transition = 'opacity 0.5s ease';
       preloader.style.opacity = '0';
-      setTimeout(() => preloader.remove(), 500);
-    }, 1000); // <-- Changed from 2000ms to 1000ms
+      setTimeout(() => preloader.remove(), 200); // remove after fade
+    }, 800); // 0.8s for animation, 0.2s fade = 1s total
   });
 </script>
-
   <!-- HEADER: site header with logo, academy name, and hamburger (mobile-first) -->
   <header class="site-header">
     <div class="container nav-row">
