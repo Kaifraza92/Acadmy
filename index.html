@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- Preloader css -->
+   <link rel="stylesheet" href="preloader.css">
+
   <!--
     Al Taqwa Online University
     - Mobile-first responsive single-file HTML + CSS + minimal JS
@@ -206,6 +209,32 @@
   </style>
 </head>
 <body>
+  <!-- PREMIUM PRELOADER -->
+<div id="preloader">
+  <div class="preloader-content">
+    <div class="logo-wrapper">
+      <div class="logo-circle">
+        <img src="AlTaqwa.jpeg" alt="Al Taqwa Logo">
+      </div>
+    </div>
+    <div class="preloader-text">
+      <div class="main-title">Al Taqwa</div>
+      <div class="sub-title">Online University</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Hide preloader after 1s with 0.5s fade
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const preloader = document.getElementById('preloader');
+      preloader.style.transition = 'opacity 0.5s ease';
+      preloader.style.opacity = '0';
+      setTimeout(() => preloader.remove(), 500);
+    }, 1000); // <-- Changed from 2000ms to 1000ms
+  });
+</script>
 
   <!-- HEADER: site header with logo, academy name, and hamburger (mobile-first) -->
   <header class="site-header">
